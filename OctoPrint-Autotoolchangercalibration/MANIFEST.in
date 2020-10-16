@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_AutoToolChangerCalibration/templates *
+recursive-include octoprint_AutoToolChangerCalibration/translations *
+recursive-include octoprint_AutoToolChangerCalibration/static *
