@@ -1,5 +1,5 @@
 # coding=utf-8
-from __future__ import absolute_import
+from __future__ import absolute_import, unicode_literals
 
 ### (Don't forget to remove me)
 # This is a basic skeleton for your plugin's __init__.py. You probably want to adjust the class name of your plugin
@@ -15,7 +15,10 @@ class AutotoolchangercalibrationPlugin(octoprint.plugin.SettingsPlugin,
                                        octoprint.plugin.AssetPlugin,
                                        octoprint.plugin.TemplatePlugin):
 
+
 	##~~ SettingsPlugin mixin
+    def on_after_startip(self):
+        self._logger.info("Hello World from AutotoolchangercalibrationPlugin")
 
 	def get_settings_defaults(self):
 		return dict(
@@ -65,7 +68,7 @@ __plugin_name__ = "Autotoolchangercalibration Plugin"
 # Python 2. New plugins should make sure to run under both versions for now. Uncomment one of the following
 # compatibility flags according to what Python versions your plugin supports!
 #__plugin_pythoncompat__ = ">=2.7,<3" # only python 2
-#__plugin_pythoncompat__ = ">=3,<4" # only python 3
+__plugin_pythoncompat__ = ">=3,<4" # only python 3
 #__plugin_pythoncompat__ = ">=2.7,<4" # python 2 and 3
 
 def __plugin_load__():
@@ -76,4 +79,3 @@ def __plugin_load__():
 	__plugin_hooks__ = {
 		"octoprint.plugin.softwareupdate.check_config": __plugin_implementation__.get_update_information
 	}
-
